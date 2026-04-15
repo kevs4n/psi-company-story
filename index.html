@@ -928,33 +928,137 @@ body {
 
 
 
-/* Ecosystem progressive reveal */
-.eco-progressive {
-  position: relative; max-width: 900px; margin: 0 auto;
+/* Ecosystem animated progressive reveal */
+.eco-stage { max-width: 900px; margin: 0 auto; }
+.eco-steps-nav {
+  display: flex; gap: 4px; justify-content: center; margin-bottom: 24px; flex-wrap: wrap;
 }
-.eco-step {
-  margin-bottom: 40px; text-align: center;
+.eco-nav-btn {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500;
+  padding: 6px 16px; border-radius: 20px; border: 1px solid var(--border);
+  background: var(--white); color: var(--text-light); cursor: pointer;
+  transition: all 0.2s; letter-spacing: 0.03em;
 }
-.eco-step-label {
-  font-family: 'JetBrains Mono', monospace; font-size: 11px;
-  color: var(--teal); letter-spacing: 0.06em; text-transform: uppercase;
-  margin-bottom: 8px;
+.eco-nav-btn:hover { border-color: var(--teal); color: var(--dark); }
+.eco-nav-btn.active { background: var(--green); color: white; border-color: var(--green); }
+
+.eco-diagram {
+  background: var(--white); border: 1px solid var(--border); border-radius: 12px;
+  padding: 32px; position: relative; overflow: hidden;
 }
-.eco-step-desc {
-  font-size: 14px; color: var(--text-light); margin-bottom: 16px;
-  font-style: italic; max-width: 600px; margin-left: auto; margin-right: auto;
+
+/* Azure ring */
+.eco-ring { padding: 16px; border-radius: 8px; margin-bottom: 12px;
+  background: linear-gradient(135deg, #eef2ff, #e8effe);
+  border: 1px dashed rgba(37,99,235,0.2);
+  opacity: 0; max-height: 0; overflow: hidden; padding: 0; margin: 0;
+  transition: all 0.5s ease;
 }
-.eco-step img {
-  width: 100%; border-radius: 8px; box-shadow: var(--shadow-lg);
-  border: 1px solid var(--border);
-  opacity: 0; transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+.eco-ring.show { opacity: 1; max-height: 200px; padding: 16px; margin-bottom: 12px; }
+.eco-ring-label { font-family: 'JetBrains Mono', monospace; font-size: 10px;
+  color: #4a6cf7; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px; }
+.eco-ring-items { display: flex; flex-wrap: wrap; gap: 6px; }
+.eco-ring-items span {
+  font-size: 10px; padding: 3px 10px; border-radius: 4px;
+  background: rgba(37,99,235,0.08); color: #4a6cf7; font-weight: 500;
 }
-.eco-step img.visible { opacity: 1; transform: translateY(0); }
-.eco-step-connector {
-  display: flex; justify-content: center; padding: 8px 0;
-  font-size: 24px; color: var(--warm-grey);
+
+/* Core 3-column */
+.eco-core-wrap { display: grid; grid-template-columns: 1fr 1.4fr 1fr; gap: 12px; align-items: start; }
+.eco-col {
+  background: var(--bg); border: 1px solid var(--border); border-radius: 8px;
+  padding: 16px; text-align: center; min-height: 60px;
+  opacity: 0; transform: scale(0.9);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
+.eco-col.show { opacity: 1; transform: scale(1); }
+.eco-col-title {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600;
+  color: var(--green); letter-spacing: 0.04em; text-transform: uppercase;
+}
+.eco-col-items {
+  display: flex; flex-direction: column; gap: 4px; margin-top: 10px;
+  opacity: 0; max-height: 0; overflow: hidden;
+  transition: all 0.5s ease;
+}
+.eco-col-items.show { opacity: 1; max-height: 300px; }
+.eco-col-items span {
+  font-size: 11px; padding: 4px 8px; border-radius: 4px;
+  background: var(--white); color: var(--text); border: 1px solid var(--border);
+}
+.eco-col-more { font-size: 10px; color: var(--text-light); font-style: italic; background: none !important; border: none !important; }
+.eco-col-center { display: flex; flex-direction: column; gap: 8px; }
+
+/* Platform boxes */
+.eco-box {
+  background: var(--bg); border: 1px solid var(--border); border-radius: 8px;
+  padding: 16px; text-align: center;
+  opacity: 0; transform: scale(0.9);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.eco-box.show { opacity: 1; transform: scale(1); }
+.eco-box-pp { border-color: rgba(0,99,56,0.3); }
+.eco-box-dv { background: var(--green-light); border-color: var(--green); }
+.eco-box-title {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600;
+  color: var(--green); letter-spacing: 0.04em; text-transform: uppercase;
+}
+.eco-box-products {
+  margin-top: 10px; opacity: 0; max-height: 0; overflow: hidden;
+  transition: all 0.5s ease;
+}
+.eco-box-products.show { opacity: 1; max-height: 300px; }
+.eco-prod-row { display: flex; flex-wrap: wrap; gap: 4px; justify-content: center; margin-bottom: 4px; }
+.eco-prod {
+  font-size: 10px; padding: 3px 8px; border-radius: 4px;
+  background: var(--white); color: var(--text); border: 1px solid var(--border);
+}
+.eco-prod-divider {
+  font-size: 9px; color: var(--text-light); margin: 6px 0;
+  display: flex; justify-content: space-between; padding: 0 8px;
+  opacity: 0; transition: opacity 0.4s;
+}
+.eco-prod-divider.show { opacity: 1; }
+
+/* Connectors */
+.eco-connector {
+  text-align: center; font-size: 11px; color: var(--text-light); padding: 4px 0;
+  opacity: 0; transition: opacity 0.4s;
+}
+.eco-connector.show { opacity: 1; }
+.eco-connector span { color: var(--green); font-size: 16px; }
+.eco-connector-sides { display: flex; justify-content: space-between; padding: 0 16px; }
+.eco-conn-l, .eco-conn-r { font-size: 10px; color: var(--text-light); }
+.eco-conn-label {
+  text-align: center; font-size: 10px; color: var(--text-light); font-style: italic;
+  opacity: 0; transition: opacity 0.4s;
+}
+.eco-conn-label.show { opacity: 1; }
+
+/* End-to-end flow */
+.eco-e2e {
+  margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border);
+  opacity: 0; max-height: 0; overflow: hidden;
+  transition: all 0.5s ease;
+}
+.eco-e2e.show { opacity: 1; max-height: 200px; }
+.eco-e2e-label {
+  font-family: 'JetBrains Mono', monospace; font-size: 10px;
+  color: var(--green); letter-spacing: 0.06em; text-transform: uppercase;
+  text-align: center; margin-bottom: 6px;
+}
+.eco-e2e-sub { text-align: center; font-size: 11px; color: var(--text-light); font-style: italic; margin-top: 8px; }
+.eco-flow {
+  display: flex; align-items: center; justify-content: center;
+  gap: 4px; flex-wrap: wrap;
+}
+.eco-fl {
+  font-size: 10px; font-weight: 600; padding: 5px 10px; border-radius: 4px; color: white;
+}
+.eco-fl-pp { background: var(--teal); }
+.eco-fl-fo { background: var(--green-dark); }
+.eco-fl-fabric { background: #8b7355; }
+.eco-fa { color: var(--warm-grey); font-size: 14px; }
 
 
 
@@ -1692,7 +1796,7 @@ body {
 
   <section class="intro-section" id="section-intro">
     <div class="intro-inner">
-      <div class="beat-label reveal">02 &mdash; Vi er Pingala</div>
+      <div class="beat-label reveal">Vi er Pingala</div>
       <h2 class="reveal reveal-delay-1">Vi er bygget radikalt anderledes</h2>
       <p class="intro-lead reveal reveal-delay-2">
         &mdash; fordi vi tror det er pr&aelig;cis hvad vores kunder forventer af os.
@@ -1735,7 +1839,7 @@ body {
 
   <section class="survey-section" id="section-survey">
     <div class="survey-inner-wide">
-      <div class="beat-label reveal" style="color:rgba(255,255,255,0.35);">02b &mdash; Fordi I forventede det</div>
+      <div class="beat-label reveal" style="color:rgba(255,255,255,0.35);">Fordi I forventede det</div>
       <h2 class="reveal reveal-delay-1">Vi er bygget anderledes &mdash; fordi I forventede det!</h2>
       <p class="survey-source reveal reveal-delay-2">&ldquo;Hvordan v&aelig;rdis&aelig;tter du de underliggende parametre n&aring;r du vurderer et IT-selskab?&rdquo;<br><span>Computerworld, IT-virksomheds image-unders&oslash;gelse 2024</span></p>
 
@@ -1809,7 +1913,7 @@ body {
 
   <section class="contrast-section" id="beat-contrast">
     <div class="contrast-inner">
-      <div class="beat-label reveal" style="color:rgba(255,255,255,0.35);">03 &mdash; Kontrasten</div>
+      <div class="beat-label reveal" style="color:rgba(255,255,255,0.35);">Kontrasten</div>
       <h2 class="reveal reveal-delay-1" style="font-size:36px; font-weight:700; color:white; letter-spacing:-0.03em; margin-bottom:8px;">To modeller. Samme branche.</h2>
       <p class="reveal reveal-delay-2" style="font-size:17px; color:rgba(255,255,255,0.5); max-width:600px; margin-bottom:0; line-height:1.7;">
         Den traditionelle pyramide vs. Pingalas flade model &mdash; forskellen handler om hvem kunden faktisk f&aring;r.
@@ -1912,7 +2016,7 @@ body {
 
   <section class="overview-section" id="beat-overview">
     <div class="overview-inner">
-      <div class="beat-label reveal">04 &mdash; Overblik</div>
+      <div class="beat-label reveal">Overblik</div>
       <h2 class="reveal reveal-delay-1">Hvad g&oslash;r Pingala unikt</h2>
       <p class="lead reveal reveal-delay-2">
         Fem s&oslash;jler der definerer vores tilgang til Microsoft-r&aring;dgivning.
@@ -1991,48 +2095,91 @@ body {
 
   <section class="ecosystem-section" id="beat-ecosystem">
     <div class="ecosystem-inner">
-      <div class="beat-label reveal">05 &mdash; &Oslash;kosystemet</div>
+      <div class="beat-label reveal">&Oslash;kosystemet</div>
       <h2 class="reveal reveal-delay-1">Microsoft Business Applications Ecosystem</h2>
       <p class="subtitle reveal reveal-delay-2">Et simpelt, kraftfuldt og fuldt integreret økosystem</p>
 
-      <!-- Ecosystem: progressive reveal with deck screenshots -->
-      <div class="eco-progressive">
-        <div class="eco-step reveal">
-          <div class="eco-step-label">Trin 1 &mdash; Kernearkitekturen</div>
-          <div class="eco-step-desc">Fire integrerede platforme: Power Platform, Dynamics 365 F&amp;O, Dataverse og Microsoft Fabric</div>
-          <img src="images/eco-slide-1.png" alt="Kernearkitektur" class="reveal">
+      <!-- Ecosystem: animated progressive reveal -->
+      <div class="eco-stage" id="ecoStage">
+        <div class="eco-steps-nav reveal">
+          <button class="eco-nav-btn active" data-eco="0">Kerne</button>
+          <button class="eco-nav-btn" data-eco="1">Power Platform</button>
+          <button class="eco-nav-btn" data-eco="2">&Oslash;kosystem</button>
+          <button class="eco-nav-btn" data-eco="3">+ Azure</button>
+          <button class="eco-nav-btn" data-eco="4">End-to-end</button>
         </div>
 
-        <div class="eco-step-connector reveal">&darr;</div>
+        <div class="eco-diagram reveal reveal-delay-2" id="ecoDiagram">
+          <!-- Azure (visible from step 3) -->
+          <div class="eco-ring eco-ring-azure" data-eco-show="3">
+            <div class="eco-ring-label">Azure Platform</div>
+            <div class="eco-ring-items">
+              <span>Logic Apps</span><span>Service Bus</span><span>API Mgmt</span><span>Functions</span><span>Entra ID</span><span>App Insights</span><span>Key Vault</span><span>DevOps</span><span>Storage</span>
+            </div>
+          </div>
 
-        <div class="eco-step reveal">
-          <div class="eco-step-label">Trin 2 &mdash; Power Platform udrullet</div>
-          <div class="eco-step-desc">Power Apps, Pages, Automate, AI Builder, Copilot Studio &mdash; b&aring;de custom og pre-built l&oslash;sninger</div>
-          <img src="images/eco-slide-2.png" alt="Power Platform" class="reveal">
-        </div>
+          <div class="eco-core-wrap">
+            <!-- D365 F&O column -->
+            <div class="eco-col eco-col-fo" data-eco-show="0">
+              <div class="eco-col-title">Dynamics 365 F&amp;O</div>
+              <div class="eco-col-items" data-eco-show="2">
+                <span>Finance</span><span>Supply Chain</span><span>HR</span><span>Commerce</span>
+                <span class="eco-col-more">+ Projects, Production&hellip;</span>
+              </div>
+            </div>
 
-        <div class="eco-step-connector reveal">&darr;</div>
+            <!-- Center column: PP + Dataverse -->
+            <div class="eco-col eco-col-center">
+              <div class="eco-box eco-box-pp" data-eco-show="0">
+                <div class="eco-box-title">Power Platform</div>
+                <div class="eco-box-products" data-eco-show="1">
+                  <div class="eco-prod-row">
+                    <span class="eco-prod">Power Apps</span><span class="eco-prod">Power Pages</span><span class="eco-prod">Power Automate</span>
+                  </div>
+                  <div class="eco-prod-row">
+                    <span class="eco-prod">AI Builder</span><span class="eco-prod">Copilot Studio</span>
+                  </div>
+                  <div class="eco-prod-divider" data-eco-show="1">Custom &larr;&rarr; Pre-built</div>
+                  <div class="eco-prod-row" data-eco-show="1">
+                    <span class="eco-prod">Field Services</span><span class="eco-prod">Sales</span><span class="eco-prod">Customer Insights</span>
+                  </div>
+                </div>
+              </div>
+              <div class="eco-connector" data-eco-show="0"><span>&#8597;</span> Native application layer</div>
+              <div class="eco-box eco-box-dv" data-eco-show="0">
+                <div class="eco-box-title">Dataverse</div>
+              </div>
+              <div class="eco-connector eco-connector-sides" data-eco-show="0">
+                <span class="eco-conn-l">&#8592; Dual write</span>
+                <span class="eco-conn-r">Linked services &#8594;</span>
+              </div>
+            </div>
 
-        <div class="eco-step reveal">
-          <div class="eco-step-label">Trin 3 &mdash; Det fulde &oslash;kosystem</div>
-          <div class="eco-step-desc">D365 F&amp;O moduler, Power Platform produkter og Microsoft Fabric &mdash; alt forbundet gennem Dataverse</div>
-          <img src="images/eco-slide-3.png" alt="Fuldt økosystem" class="reveal">
-        </div>
+            <!-- Fabric column -->
+            <div class="eco-col eco-col-fabric" data-eco-show="0">
+              <div class="eco-col-title">Microsoft Fabric</div>
+              <div class="eco-col-items" data-eco-show="2">
+                <span>Power BI</span><span>Data Factory</span><span>Data Engineering</span>
+                <span>Data Warehouse</span><span>Real-Time Analytics</span><span>OneLake</span>
+              </div>
+            </div>
+          </div>
 
-        <div class="eco-step-connector reveal">&darr;</div>
-
-        <div class="eco-step reveal">
-          <div class="eco-step-label">Trin 4 &mdash; Azure-laget</div>
-          <div class="eco-step-desc">Logic Apps, Service Bus, API Management, Azure Functions, DevOps, Entra ID, Key Vault &mdash; og meget mere</div>
-          <img src="images/eco-slide-4.png" alt="Azure-laget" class="reveal">
-        </div>
-
-        <div class="eco-step-connector reveal">&darr;</div>
-
-        <div class="eco-step reveal">
-          <div class="eco-step-label">Trin 5 &mdash; End-to-end p&aring; tv&aelig;rs af &oslash;kosystemet</div>
-          <div class="eco-step-desc">Fra marketing-kampagne til faktura til Power BI &mdash; brug af s&aring; meget standardfunktionalitet som muligt</div>
-          <img src="images/eco-slide-5.png" alt="End-to-end" class="reveal">
+          <!-- End-to-end flow (step 4) -->
+          <div class="eco-e2e" data-eco-show="4">
+            <div class="eco-e2e-label">End-to-end p&aring; tv&aelig;rs af &oslash;kosystemet</div>
+            <div class="eco-flow">
+              <div class="eco-fl eco-fl-pp">Kampagne</div><span class="eco-fa">&rarr;</span>
+              <div class="eco-fl eco-fl-pp">Lead</div><span class="eco-fa">&rarr;</span>
+              <div class="eco-fl eco-fl-pp">Opportunity</div><span class="eco-fa">&rarr;</span>
+              <div class="eco-fl eco-fl-fo">Ordre</div><span class="eco-fa">&rarr;</span>
+              <div class="eco-fl eco-fl-fo">Produktion</div><span class="eco-fa">&rarr;</span>
+              <div class="eco-fl eco-fl-fo">Lager</div><span class="eco-fa">&rarr;</span>
+              <div class="eco-fl eco-fl-fo">Faktura</div><span class="eco-fa">&rarr;</span>
+              <div class="eco-fl eco-fl-fabric">BI</div>
+            </div>
+            <div class="eco-e2e-sub">Brug af s&aring; meget standardfunktionalitet som muligt</div>
+          </div>
         </div>
       </div>
 
@@ -2061,7 +2208,7 @@ body {
 
   <section class="growth-section" id="beat-growth">
     <div class="growth-inner">
-      <div class="beat-label reveal" style="text-align:center;">06 &mdash; V&aelig;ksthistorien</div>
+      <div class="beat-label reveal" style="text-align:center;">V&aelig;ksthistorien</div>
       <h2 class="reveal reveal-delay-1">Modellen virker. Tallene viser det.</h2>
       <p class="lead reveal reveal-delay-2">
         Fra 3 konsulenter i 2009 til 153 eksperter i dag. Organisk v&aelig;kst, ingen opk&oslash;b, ingen kompromiser.
@@ -2108,7 +2255,7 @@ body {
 
   <section class="gazelle-section" id="section-gazelle">
     <div class="gazelle-section-inner">
-      <div class="beat-label reveal" style="color:#b8975a;">07 &mdash; B&oslash;rsen Gazelle</div>
+      <div class="beat-label reveal" style="color:#b8975a;">B&oslash;rsen Gazelle</div>
       <div class="gazelle-showcase reveal" id="gazelleShowcase">
         <div class="gazelle-showcase-inner">
           <div class="gazelle-logo-side">
@@ -2135,7 +2282,7 @@ body {
 
   <section class="logos-section" id="section-logos">
     <div class="logos-inner">
-      <div class="beat-label reveal" style="color:rgba(255,255,255,0.35);">08 &mdash; Vores kunder</div>
+      <div class="beat-label reveal" style="color:rgba(255,255,255,0.35);">Vores kunder</div>
       <h2 class="reveal reveal-delay-1">Vi arbejder med mange mennesker &amp; virksomheder</h2>
       <p class="lead reveal reveal-delay-2">115 Dynamics 365 og 38 AX 2012 kunder</p>
       <div class="industry-filters reveal reveal-delay-3" id="industryFilters">
@@ -2162,7 +2309,7 @@ body {
 
   <section class="global-section" id="section-global">
     <div class="global-inner">
-      <div class="beat-label reveal" style="color:rgba(255,255,255,0.35);">09 &mdash; Global r&aelig;kkevidde</div>
+      <div class="beat-label reveal" style="color:rgba(255,255,255,0.35);">Global r&aelig;kkevidde</div>
       <h2 class="reveal reveal-delay-1">Følg solen</h2>
       <p class="lead reveal reveal-delay-2">5 kontorer i Danmark, Norge og Dubai &mdash; vi servicerer kunder i 37 lande</p>
 
@@ -2378,7 +2525,7 @@ body {
 
   <section class="model-section" id="section-model">
     <div class="model-inner">
-      <div class="beat-label reveal" style="text-align:center;">10 &mdash; Modellen</div>
+      <div class="beat-label reveal" style="text-align:center;">Modellen</div>
       <h2 class="reveal reveal-delay-1">Fra 10 til 100 i en flad organisation</h2>
       <p class="lead reveal reveal-delay-2">Ingen mellemledere, ingen salg, ingen marketing, ingen administration. Alt hviler på vores kerne &mdash; konsulenterne.</p>
 
@@ -2443,7 +2590,7 @@ body {
 
   <section class="validation-section" id="section-validation">
     <div class="validation-inner">
-      <div class="beat-label reveal" style="text-align:center;">11 &mdash; Ekstern validering</div>
+      <div class="beat-label reveal" style="text-align:center;">Ekstern validering</div>
       <h2 class="reveal reveal-delay-1">Podcasts, Presse &amp; Ledelseslitteratur</h2>
       <p class="lead reveal reveal-delay-2">Pingala som case study i ledelseslitteratur og dansk erhvervspresse</p>
 
@@ -2475,7 +2622,7 @@ body {
 
   <section class="ona-section" id="section-ona">
     <div class="ona-inner">
-      <div class="beat-label reveal" style="color:rgba(255,255,255,0.35);">12 &mdash; ONA</div>
+      <div class="beat-label reveal" style="color:rgba(255,255,255,0.35);">ONA</div>
       <h2 class="reveal reveal-delay-1">Organisatorisk Netværksanalyse</h2>
       <p class="lead reveal reveal-delay-2">Fra 14 til 130 medarbejdere &mdash; visualiseret gennem netværksforbindelser</p>
 
@@ -2518,7 +2665,7 @@ body {
 
   <section class="close-section" id="section-close">
     <div class="close-inner">
-      <div class="beat-label reveal" style="color:rgba(255,255,255,0.5);">13 &mdash; Hvorfor</div>
+      <div class="beat-label reveal" style="color:rgba(255,255,255,0.5);">Hvorfor</div>
       <h2 class="close-mantra reveal reveal-delay-1">Vi er nu på vej ind i et nyt mantra:<br><em>100 til 1000</em></h2>
 
       <div class="close-points">
@@ -2947,6 +3094,48 @@ body {
   buildLogoWall();
 
 
+
+  // ─── Ecosystem progressive reveal ──────────────────────────────────────
+  var ecoStep = -1;
+  function setEcoStep(step) {
+    if (step === ecoStep) return;
+    ecoStep = step;
+    // Update nav buttons
+    document.querySelectorAll('.eco-nav-btn').forEach(function(btn) {
+      btn.classList.toggle('active', parseInt(btn.dataset.eco) === step);
+    });
+    // Show/hide elements based on data-eco-show
+    document.querySelectorAll('[data-eco-show]').forEach(function(el) {
+      var showAt = parseInt(el.dataset.ecoShow);
+      if (showAt <= step) {
+        el.classList.add('show');
+      } else {
+        el.classList.remove('show');
+      }
+    });
+  }
+
+  // Nav button clicks
+  document.querySelectorAll('.eco-nav-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      setEcoStep(parseInt(this.dataset.eco));
+    });
+  });
+
+  // Auto-play on scroll
+  var ecoAutoPlayed = false;
+  var ecoObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting && !ecoAutoPlayed) {
+        ecoAutoPlayed = true;
+        [0,1,2,3,4].forEach(function(s) {
+          setTimeout(function() { setEcoStep(s); }, s * 1200);
+        });
+      }
+    });
+  }, { threshold: 0.2 });
+  var ecoStage = document.getElementById('ecoStage');
+  if (ecoStage) ecoObs.observe(ecoStage);
 
   // ─── Survey bars animation ────────────────────────────────────────────
   var surveyAnimated = false;
