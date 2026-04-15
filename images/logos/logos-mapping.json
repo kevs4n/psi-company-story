@@ -1,0 +1,281 @@
+{
+  "description": "161 Pingala customer/credential logos extracted from 'Pingala Corp Pre.pptx' slides 16-17. Classified by industry for the company story HTML logo wall.",
+  "source": "C:\\Users\\kevin\\Downloads\\pingala_corp_media\\ppt\\media\\",
+  "categories": [
+    {
+      "id": "energy",
+      "label": "Energy / Utilities",
+      "logos": [
+        { "file": "image112.png", "company": "HOFOR" },
+        { "file": "image208.png", "company": "Vestforsyning" },
+        { "file": "image212.png", "company": "EnergiFyn" },
+        { "file": "image231.png", "company": "NK Forsyning" },
+        { "file": "image244.png", "company": "ON Power" },
+        { "file": "image245.png", "company": "Forsyning Helsingør" },
+        { "file": "image256.png", "company": "Forsyning Helsingør" },
+        { "file": "image246.png", "company": "Veitur" },
+        { "file": "image247.png", "company": "Carbfix" },
+        { "file": "image250.png", "company": "Din Forsyning" },
+        { "file": "image140.png", "company": "fors" },
+        { "file": "image237.png", "company": "Vestforbrænding" },
+        { "file": "image142.png", "company": "SK Forsyning" },
+        { "file": "image141.png", "company": "KLAR Forsyning" },
+        { "file": "image190.png", "company": "Landsvirkjun" },
+        { "file": "image248.png", "company": "Orkuveitan" },
+        { "file": "image254.png", "company": "Orkuveitan" },
+        { "file": "image145.png", "company": "MHI Vestas Offshore Wind" },
+        { "file": "image165.png", "company": "Oldebjerg" },
+        { "file": "image195.png", "company": "Envafors" }
+      ]
+    },
+    {
+      "id": "pharma",
+      "label": "Pharma / Health / MedTech",
+      "logos": [
+        { "file": "image177.png", "company": "Ferring Pharmaceuticals" },
+        { "file": "image146.png", "company": "Oticon" },
+        { "file": "image147.png", "company": "Widex" },
+        { "file": "image164.jpeg", "company": "GN Audio" },
+        { "file": "image98.png", "company": "Otometrics" },
+        { "file": "image213.png", "company": "Apotek 1" },
+        { "file": "image230.png", "company": "ApoSave" },
+        { "file": "image234.png", "company": "Kræftens Bekæmpelse" },
+        { "file": "image116.jpeg", "company": "Smith & Nephew" },
+        { "file": "image121.png", "company": "Abacus Medicine" },
+        { "file": "image239.png", "company": "PHM" },
+        { "file": "image137.png", "company": "Radiometer" },
+        { "file": "image101.png", "company": "CMC Biologics" },
+        { "file": "image126.png", "company": "MissionPharma" },
+        { "file": "image187.png", "company": "Ascendis Pharma" },
+        { "file": "image159.png", "company": "3shape" },
+        { "file": "image184.png", "company": "TMJ (Tjellesen Max Jenne)" }
+      ]
+    },
+    {
+      "id": "food",
+      "label": "Food & Beverage",
+      "logos": [
+        { "file": "image198.png", "company": "Dagrofa" },
+        { "file": "image155.png", "company": "Dagrofa Food Service" },
+        { "file": "image209.png", "company": "Orkla" },
+        { "file": "image238.png", "company": "Orkla Food Ingredients" },
+        { "file": "image210.png", "company": "Harlem Food" },
+        { "file": "image138.png", "company": "SamAqua" },
+        { "file": "image180.png", "company": "Perfetto Trading" },
+        { "file": "image151.png", "company": "CO-RO" },
+        { "file": "image166.png", "company": "Barakat Group" },
+        { "file": "image104.gif", "company": "Sirena" },
+        { "file": "image176.png", "company": "WhiteSpot Food" }
+      ]
+    },
+    {
+      "id": "retail",
+      "label": "Retail / Consumer / Lifestyle",
+      "logos": [
+        { "file": "image235.png", "company": "Matas" },
+        { "file": "image236.png", "company": "KICKS" },
+        { "file": "image108.png", "company": "Pandora" },
+        { "file": "image148.png", "company": "Tvilum" },
+        { "file": "image226.png", "company": "Sirius" },
+        { "file": "image115.png", "company": "Ronald A/S" },
+        { "file": "image240.png", "company": "Georg Jensen" }
+      ]
+    },
+    {
+      "id": "financial",
+      "label": "Financial Services / Insurance",
+      "logos": [
+        { "file": "image91.png", "company": "KPMG" },
+        { "file": "image97.png", "company": "Danske Bank" },
+        { "file": "image128.png", "company": "Jyske Bank" },
+        { "file": "image144.png", "company": "dlr kredit" },
+        { "file": "image107.png", "company": "Danica Pension" },
+        { "file": "image100.png", "company": "Pensam" },
+        { "file": "image199.png", "company": "SKULD" },
+        { "file": "image123.png", "company": "Europæiske ERV" }
+      ]
+    },
+    {
+      "id": "tech",
+      "label": "Technology / IT / Consulting",
+      "logos": [
+        { "file": "image227.png", "company": "Visma" },
+        { "file": "image173.png", "company": "Advania" },
+        { "file": "image205.png", "company": "Valcon" },
+        { "file": "image174.png", "company": "Semler" },
+        { "file": "image127.png", "company": "ACTE" },
+        { "file": "image179.png", "company": "Securitas" }
+      ]
+    },
+    {
+      "id": "logistics",
+      "label": "Logistics / Transport / Industrial",
+      "logos": [
+        { "file": "image119.png", "company": "DP World" },
+        { "file": "image95.png", "company": "Conaxess Trade" },
+        { "file": "image192.png", "company": "FTZ" },
+        { "file": "image206.png", "company": "Skan-Log" },
+        { "file": "image96.png", "company": "GEA" },
+        { "file": "image228.png", "company": "Lineage" },
+        { "file": "image197.png", "company": "ECS Group" },
+        { "file": "image188.png", "company": "Franzefoss" },
+        { "file": "image207.png", "company": "Ejner Hessel" },
+        { "file": "image221.png", "company": "OFCO" },
+        { "file": "image222.png", "company": "AHI Carrier" },
+        { "file": "image106.png", "company": "LEMAN" },
+        { "file": "image109.jpeg", "company": "Stål & Plast A/S" },
+        { "file": "image242.png", "company": "BPW" }
+      ]
+    },
+    {
+      "id": "realestate",
+      "label": "Real Estate / Property",
+      "logos": [
+        { "file": "image124.png", "company": "Core Property Management" },
+        { "file": "image241.png", "company": "ATP Ejendomme" },
+        { "file": "image204.png", "company": "deas" },
+        { "file": "image196.png", "company": "Aldar" },
+        { "file": "image105.png", "company": "Danske Forvaltning" },
+        { "file": "image172.png", "company": "Aqaar" }
+      ]
+    },
+    {
+      "id": "hospitality",
+      "label": "Hospitality / Venues",
+      "logos": [
+        { "file": "image149.png", "company": "Armani Hotel Milano" },
+        { "file": "image129.png", "company": "Rove Hotels" },
+        { "file": "image130.png", "company": "EMAAR Hospitality" },
+        { "file": "image132.png", "company": "Address Hotels + Resorts" },
+        { "file": "image156.png", "company": "Al Alamein Hotel" },
+        { "file": "image100.png", "company": "Sinatur" },
+        { "file": "image143.png", "company": "Dubai Opera" },
+        { "file": "image163.png", "company": "The Scandinavian" }
+      ]
+    },
+    {
+      "id": "aviation",
+      "label": "Aviation / Mobility",
+      "logos": [
+        { "file": "image111.png", "company": "Mittarfeqarfiit (Greenland Airports)" },
+        { "file": "image185.png", "company": "Kalaallit Airports" },
+        { "file": "image233.png", "company": "Europcar" },
+        { "file": "image189.png", "company": "Moller Mobility Group" }
+      ]
+    },
+    {
+      "id": "construction",
+      "label": "Construction / Engineering",
+      "logos": [
+        { "file": "image194.png", "company": "Element Logic" },
+        { "file": "image220.png", "company": "Euro Mechanical" },
+        { "file": "image114.png", "company": "Tommerup Kister" },
+        { "file": "image136.png", "company": "SH Group" },
+        { "file": "image216.png", "company": "Mestergruppen" },
+        { "file": "image215.png", "company": "Gausdal Landhandleri" },
+        { "file": "image175.png", "company": "Byrne Equipment Rental" },
+        { "file": "image229.png", "company": "Draich Contracting" },
+        { "file": "image94.png", "company": "Fosroc" },
+        { "file": "image103.png", "company": "Enemærke & Petersen" }
+      ]
+    },
+    {
+      "id": "defense",
+      "label": "Defense / Aerospace",
+      "logos": [
+        { "file": "image251.png", "company": "Nammo" }
+      ]
+    },
+    {
+      "id": "middleeast",
+      "label": "Middle East",
+      "logos": [
+        { "file": "image170.png", "company": "DAMAC" },
+        { "file": "image224.png", "company": "Lals Group" },
+        { "file": "image225.png", "company": "Talabat" },
+        { "file": "image201.png", "company": "Al Fakher" },
+        { "file": "image232.png", "company": "Fawaz" },
+        { "file": "image252.png", "company": "Fawaz" },
+        { "file": "image152.png", "company": "SANAD" },
+        { "file": "image218.png", "company": "Masafi" },
+        { "file": "image223.png", "company": "Tamkeen" },
+        { "file": "image139.png", "company": "EMAAR" },
+        { "file": "image134.png", "company": "noon" },
+        { "file": "image168.png", "company": "Namshi" },
+        { "file": "image122.png", "company": "Yusuf Bin Ahmed Kanoo" },
+        { "file": "image200.png", "company": "Jubaili Bros" },
+        { "file": "image219.png", "company": "Alroumi Group" },
+        { "file": "image181.png", "company": "SRG Holding" },
+        { "file": "image158.png", "company": "Burgan Bank" },
+        { "file": "image157.png", "company": "MMI" },
+        { "file": "image217.png", "company": "AHS Properties" }
+      ]
+    },
+    {
+      "id": "public",
+      "label": "Public / NGO / Education",
+      "logos": [
+        { "file": "image153.png", "company": "FOA" },
+        { "file": "image161.jpeg", "company": "Røde Kors" },
+        { "file": "image255.png", "company": "IDA" },
+        { "file": "image243.jpeg", "company": "Folkeskolen.dk" },
+        { "file": "image234.png", "company": "Kræftens Bekæmpelse" },
+        { "file": "image110.png", "company": "GL (Gymnasieskolernes Lærerforening)" },
+        { "file": "image99.png", "company": "Danmarks Lærerforening" },
+        { "file": "image117.png", "company": "Naalakkersuisut" },
+        { "file": "image202.png", "company": "IFU" },
+        { "file": "image125.png", "company": "Jumeira University" },
+        { "file": "image193.png", "company": "Plan Børnefonden" }
+      ]
+    },
+    {
+      "id": "design",
+      "label": "Design / Furniture",
+      "logos": [
+        { "file": "image214.png", "company": "Audo" },
+        { "file": "image118.png", "company": "Dan-Form Denmark" },
+        { "file": "image113.png", "company": "Højager Belysning" }
+      ]
+    },
+    {
+      "id": "packaging",
+      "label": "Packaging / Distribution",
+      "logos": [
+        { "file": "image162.png", "company": "Schur" },
+        { "file": "image93.png", "company": "Fritz Schur Energy" },
+        { "file": "image92.jpeg", "company": "Convena Distribution" }
+      ]
+    },
+    {
+      "id": "telecom",
+      "label": "Telecom / Infrastructure",
+      "logos": [
+        { "file": "image249.png", "company": "Ljósleiðarinn" }
+      ]
+    },
+    {
+      "id": "consumer",
+      "label": "Consumer Goods",
+      "logos": [
+        { "file": "image191.png", "company": "Scandinavian Tobacco Group" }
+      ]
+    },
+    {
+      "id": "trading",
+      "label": "Trading / Other Services",
+      "logos": [
+        { "file": "image186.png", "company": "Peter Justesen" },
+        { "file": "image183.png", "company": "Nellemann Group" },
+        { "file": "image102.jpeg", "company": "Bell & Add" },
+        { "file": "image167.png", "company": "Elis" },
+        { "file": "image169.png", "company": "CBI" },
+        { "file": "image203.png", "company": "OJD Industry" },
+        { "file": "image211.png", "company": "Melbye" },
+        { "file": "image160.png", "company": "CosmosTrawl" },
+        { "file": "image133.png", "company": "Nimbus" },
+        { "file": "image178.jpeg", "company": "Dana Lim" },
+        { "file": "image96.png", "company": "GEA" }
+      ]
+    }
+  ]
+}
