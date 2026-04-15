@@ -228,6 +228,66 @@ body {
 }
 
 
+
+/* =============================================================================
+   SECTION 2: VI ER PINGALA (Introduction)
+   ============================================================================= */
+
+.intro-section {
+  background: var(--white);
+  padding: 100px 40px;
+}
+.intro-inner {
+  max-width: 900px; margin: 0 auto; text-align: center;
+}
+.intro-inner h2 {
+  font-size: 42px; font-weight: 700; color: var(--dark);
+  letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 20px;
+}
+.intro-inner .intro-lead {
+  font-size: 19px; color: var(--text-light); line-height: 1.7;
+  max-width: 700px; margin: 0 auto 48px;
+}
+.intro-stats {
+  display: flex; gap: 40px; justify-content: center; flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+.intro-stat {
+  text-align: center;
+}
+.intro-stat-num {
+  font-size: 56px; font-weight: 700; color: var(--green);
+  font-family: 'JetBrains Mono', monospace; letter-spacing: -0.03em; line-height: 1;
+}
+.intro-stat-label {
+  font-size: 14px; color: var(--text-light); margin-top: 4px; font-weight: 500;
+}
+.intro-survey {
+  background: var(--bg); border: 1px solid var(--border); border-radius: 12px;
+  padding: 32px 40px; text-align: left; max-width: 700px; margin: 0 auto;
+  position: relative;
+}
+.intro-survey::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 3px; background: var(--green); border-radius: 12px 12px 0 0;
+}
+.intro-survey-source {
+  font-family: 'JetBrains Mono', monospace; font-size: 10px;
+  color: var(--text-light); letter-spacing: 0.06em; text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.intro-survey h3 {
+  font-size: 18px; font-weight: 600; color: var(--dark); margin-bottom: 12px;
+}
+.intro-survey-points {
+  display: flex; flex-direction: column; gap: 8px;
+}
+.intro-survey-point {
+  font-size: 14px; color: var(--text); line-height: 1.5;
+  padding: 8px 12px; background: var(--white); border-radius: 6px;
+  border-left: 3px solid var(--green);
+}
+
 /* =============================================================================
    BEAT 2: THE CONTRAST — Pyramid vs Flat (centerpiece)
    ============================================================================= */
@@ -783,44 +843,36 @@ body {
 
 
 
-/* Ecosystem layers */
-.eco-layers { max-width: 800px; margin: 0 auto; }
-.eco-layer {
-  background: var(--white); border: 1px solid var(--border); border-radius: var(--radius);
-  padding: 16px 20px; margin-bottom: 0;
+
+/* Ecosystem progressive reveal */
+.eco-progressive {
+  position: relative; max-width: 900px; margin: 0 auto;
 }
-.eco-layer-label {
-  font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600;
-  letter-spacing: 0.06em; text-transform: uppercase; color: var(--green);
-  margin-bottom: 10px; text-align: center;
+.eco-step {
+  margin-bottom: 40px; text-align: center;
 }
-.eco-layer-icons {
-  display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+.eco-step-label {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px;
+  color: var(--teal); letter-spacing: 0.06em; text-transform: uppercase;
+  margin-bottom: 8px;
 }
-.eco-icon-item {
-  display: flex; flex-direction: column; align-items: center; gap: 4px;
-  width: 70px; text-align: center;
+.eco-step-desc {
+  font-size: 14px; color: var(--text-light); margin-bottom: 16px;
+  font-style: italic; max-width: 600px; margin-left: auto; margin-right: auto;
 }
-.eco-icon-item img { width: 36px; height: 36px; object-fit: contain; }
-.eco-icon-item span { font-size: 9px; color: var(--text-light); line-height: 1.2; }
-.eco-connectors {
-  display: flex; justify-content: space-around; padding: 4px 0;
-  font-size: 18px; color: var(--warm-grey);
+.eco-step img {
+  width: 100%; border-radius: 8px; box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+  opacity: 0; transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
-.eco-core-grid {
-  display: grid; grid-template-columns: 1fr auto 1fr; gap: 8px; align-items: stretch;
+.eco-step img.visible { opacity: 1; transform: translateY(0); }
+.eco-step-connector {
+  display: flex; justify-content: center; padding: 8px 0;
+  font-size: 24px; color: var(--warm-grey);
 }
-.eco-layer-dv {
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  min-width: 100px;
-}
-.eco-dv-label { font-size: 9px; color: var(--text-light); margin-top: 8px; text-align: center; }
-.eco-layer-azure { background: linear-gradient(135deg, #f0f4ff 0%, #e8f0fe 100%); }
-.eco-layer-fabric { background: linear-gradient(135deg, #fef7ec 0%, #fdf2e4 100%); }
-.eco-subtitle {
-  text-align: center; font-style: italic; color: var(--text-light);
-  font-size: 14px; margin-top: 20px;
-}
+
+
 
 /* =============================================================================
    BEAT 5: GROWTH STORY — Chart.js Panels
@@ -1053,8 +1105,21 @@ body {
   100% { opacity: 1; transform: scale(1); }
 }
 
+
 /* =============================================================================
-   SECTION 6: CUSTOMER LOGO WALL
+   SECTION 7: BØRSEN GAZELLE (standalone)
+   ============================================================================= */
+
+.gazelle-section {
+  background: linear-gradient(135deg, #fdf8f0 0%, #f7f0e3 50%, #f5ece0 100%);
+  padding: 80px 40px;
+}
+.gazelle-section-inner {
+  max-width: 800px; margin: 0 auto;
+}
+
+/* =============================================================================
+   SECTION 8: CUSTOMER LOGO WALL
    ============================================================================= */
 
 .logos-section {
@@ -1535,13 +1600,55 @@ body {
   </section>
 
 
+
+
   <!-- ═══════════════════════════════════════════════════════════════════════════
-       BEAT 2: THE CONTRAST — Pyramid vs Flat (centerpiece)
+       SECTION 2: VI ER PINGALA (Introduction)
+       ═══════════════════════════════════════════════════════════════════════════ -->
+
+  <section class="intro-section" id="section-intro">
+    <div class="intro-inner">
+      <div class="beat-label reveal">02 &mdash; Vi er Pingala</div>
+      <h2 class="reveal reveal-delay-1">Vi er bygget radikalt anderledes, fordi vi tror det er pr&aelig;cis hvad vores kunder forventer af os</h2>
+      <p class="intro-lead reveal reveal-delay-2">
+        Vi er specialiseret i hele Microsoft Business Applications &oslash;kosystemet til at underst&oslash;tte end-to-end processer. Vi har gjort det i over 15 &aring;r, hos mere end 300 kunder, i 29 lande. Vi gl&aelig;der os til at g&oslash;re det samme med jer!
+      </p>
+
+      <div class="intro-stats">
+        <div class="intro-stat reveal reveal-delay-2">
+          <div class="intro-stat-num"><span class="count-up" data-target="15">0</span>+</div>
+          <div class="intro-stat-label">&aring;rs erfaring</div>
+        </div>
+        <div class="intro-stat reveal reveal-delay-3">
+          <div class="intro-stat-num"><span class="count-up" data-target="300">0</span>+</div>
+          <div class="intro-stat-label">kunder</div>
+        </div>
+        <div class="intro-stat reveal reveal-delay-4">
+          <div class="intro-stat-num"><span class="count-up" data-target="29">0</span></div>
+          <div class="intro-stat-label">lande</div>
+        </div>
+      </div>
+
+      <div class="intro-survey reveal reveal-delay-5">
+        <div class="intro-survey-source">Computerworld, IT-virksomheds image-unders&oslash;gelse 2024</div>
+        <h3>&ldquo;Vi er bygget anderledes, fordi I forventede det!&rdquo;</h3>
+        <div class="intro-survey-points">
+          <div class="intro-survey-point">Kunder er ligeglade med st&oslash;tteaktiviteter der ikke p&aring;virker deres projekter</div>
+          <div class="intro-survey-point">Kunder er ligeglade med et stort ledelseslag og deres marketing- og PR-materiale</div>
+          <div class="intro-survey-point">Kunder vil have value for money &mdash; sv&aelig;rt n&aring;r de skal betale for alt det de ikke har brug for</div>
+          <div class="intro-survey-point"><strong>Kunder vil have de bedste og mest erfarne konsulenter med direkte adgang!</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════════
+       SECTION 3: THE CONTRAST — Pyramid vs Flat (centerpiece)
        ═══════════════════════════════════════════════════════════════════════════ -->
 
   <section class="contrast-section" id="beat-contrast">
     <div class="contrast-inner">
-      <div class="beat-label reveal" style="color:rgba(255,255,255,0.35);">02 &mdash; Kontrasten</div>
+      <div class="beat-label reveal" style="color:rgba(255,255,255,0.35);">03 &mdash; Kontrasten</div>
       <h2 class="reveal reveal-delay-1" style="font-size:36px; font-weight:700; color:white; letter-spacing:-0.03em; margin-bottom:8px;">To modeller. Samme branche.</h2>
       <p class="reveal reveal-delay-2" style="font-size:17px; color:rgba(255,255,255,0.5); max-width:600px; margin-bottom:0; line-height:1.7;">
         Den traditionelle pyramide vs. Pingalas flade model &mdash; forskellen handler om hvem kunden faktisk f&aring;r.
@@ -1644,7 +1751,7 @@ body {
 
   <section class="overview-section" id="beat-overview">
     <div class="overview-inner">
-      <div class="beat-label reveal">03 &mdash; Overblik</div>
+      <div class="beat-label reveal">04 &mdash; Overblik</div>
       <h2 class="reveal reveal-delay-1">Hvad g&oslash;r Pingala unikt</h2>
       <p class="lead reveal reveal-delay-2">
         Fem s&oslash;jler der definerer vores tilgang til Microsoft-r&aring;dgivning.
@@ -1723,68 +1830,49 @@ body {
 
   <section class="ecosystem-section" id="beat-ecosystem">
     <div class="ecosystem-inner">
-      <div class="beat-label reveal">04 &mdash; &Oslash;kosystemet</div>
+      <div class="beat-label reveal">05 &mdash; &Oslash;kosystemet</div>
       <h2 class="reveal reveal-delay-1">Microsoft Business Applications Ecosystem</h2>
       <p class="subtitle reveal reveal-delay-2">Et simpelt, kraftfuldt og fuldt integreret økosystem</p>
 
-      <!-- Ecosystem: layered icon grid -->
-      <div class="eco-layers reveal reveal-delay-3">
-        <div class="eco-layer eco-layer-azure">
-          <div class="eco-layer-label">Azure Platform</div>
-          <div class="eco-layer-icons">
-            <div class="eco-icon-item"><img src="images/ecosystem/image65.png" alt=""><span>Logic Apps</span></div>
-            <div class="eco-icon-item"><img src="images/ecosystem/image67.png" alt=""><span>Service Bus</span></div>
-            <div class="eco-icon-item"><img src="images/ecosystem/image69.png" alt=""><span>API Mgmt</span></div>
-            <div class="eco-icon-item"><img src="images/ecosystem/image71.png" alt=""><span>Functions</span></div>
-            <div class="eco-icon-item"><img src="images/ecosystem/image73.png" alt=""><span>App Insights</span></div>
-            <div class="eco-icon-item"><img src="images/ecosystem/image75.png" alt=""><span>Storage</span></div>
-            <div class="eco-icon-item"><img src="images/ecosystem/image79.png" alt=""><span>Entra ID</span></div>
-            <div class="eco-icon-item"><img src="images/ecosystem/image81.png" alt=""><span>Key Vault</span></div>
-            <div class="eco-icon-item"><img src="images/ecosystem/image83.png" alt=""><span>DevOps</span></div>
-          </div>
+      <!-- Ecosystem: progressive reveal with deck screenshots -->
+      <div class="eco-progressive">
+        <div class="eco-step reveal">
+          <div class="eco-step-label">Trin 1 &mdash; Kernearkitekturen</div>
+          <div class="eco-step-desc">Fire integrerede platforme: Power Platform, Dynamics 365 F&amp;O, Dataverse og Microsoft Fabric</div>
+          <img src="images/eco-slide-1.png" alt="Kernearkitektur" class="reveal">
         </div>
-        <div class="eco-connectors"><span>&#8597;</span><span>&#8597;</span><span>&#8597;</span></div>
-        <div class="eco-core-grid">
-          <div class="eco-layer eco-layer-fo">
-            <div class="eco-layer-label">Dynamics 365 F&amp;O</div>
-            <div class="eco-layer-icons">
-              <div class="eco-icon-item"><img src="images/ecosystem/image48.png" alt=""><span>Finance</span></div>
-              <div class="eco-icon-item"><img src="images/ecosystem/image50.png" alt=""><span>SCM</span></div>
-              <div class="eco-icon-item"><img src="images/ecosystem/image52.png" alt=""><span>HR</span></div>
-              <div class="eco-icon-item"><img src="images/ecosystem/image54.png" alt=""><span>Commerce</span></div>
-            </div>
-          </div>
-          <div class="eco-layer eco-layer-dv">
-            <div class="eco-layer-label">Dataverse</div>
-            <div class="eco-layer-icons">
-              <div class="eco-icon-item"><img src="images/ecosystem/image28.png" alt=""><span>Core</span></div>
-            </div>
-            <div class="eco-dv-label">Dual write &harr; Linked services</div>
-          </div>
-          <div class="eco-layer eco-layer-pp">
-            <div class="eco-layer-label">Power Platform</div>
-            <div class="eco-layer-icons">
-              <div class="eco-icon-item"><img src="images/ecosystem/image30.png" alt=""><span>Power Apps</span></div>
-              <div class="eco-icon-item"><img src="images/ecosystem/image32.png" alt=""><span>Automate</span></div>
-              <div class="eco-icon-item"><img src="images/ecosystem/image34.png" alt=""><span>Pages</span></div>
-              <div class="eco-icon-item"><img src="images/ecosystem/image36.png" alt=""><span>BI</span></div>
-              <div class="eco-icon-item"><img src="images/ecosystem/image39.png" alt=""><span>AI Builder</span></div>
-              <div class="eco-icon-item"><img src="images/ecosystem/image41.png" alt=""><span>Copilot</span></div>
-            </div>
-          </div>
+
+        <div class="eco-step-connector reveal">&darr;</div>
+
+        <div class="eco-step reveal">
+          <div class="eco-step-label">Trin 2 &mdash; Power Platform udrullet</div>
+          <div class="eco-step-desc">Power Apps, Pages, Automate, AI Builder, Copilot Studio &mdash; b&aring;de custom og pre-built l&oslash;sninger</div>
+          <img src="images/eco-slide-2.png" alt="Power Platform" class="reveal">
         </div>
-        <div class="eco-connectors"><span>&#8597;</span><span>&#8597;</span><span>&#8597;</span></div>
-        <div class="eco-layer eco-layer-fabric">
-          <div class="eco-layer-label">Microsoft Fabric</div>
-          <div class="eco-layer-icons">
-            <div class="eco-icon-item"><img src="images/ecosystem/image56.png" alt=""><span>Data Factory</span></div>
-            <div class="eco-icon-item"><img src="images/ecosystem/image58.png" alt=""><span>Engineering</span></div>
-            <div class="eco-icon-item"><img src="images/ecosystem/image60.png" alt=""><span>Warehouse</span></div>
-            <div class="eco-icon-item"><img src="images/ecosystem/image62.png" alt=""><span>Real-Time</span></div>
-            <div class="eco-icon-item"><img src="images/ecosystem/image64.png" alt=""><span>OneLake</span></div>
-          </div>
+
+        <div class="eco-step-connector reveal">&darr;</div>
+
+        <div class="eco-step reveal">
+          <div class="eco-step-label">Trin 3 &mdash; Det fulde &oslash;kosystem</div>
+          <div class="eco-step-desc">D365 F&amp;O moduler, Power Platform produkter og Microsoft Fabric &mdash; alt forbundet gennem Dataverse</div>
+          <img src="images/eco-slide-3.png" alt="Fuldt økosystem" class="reveal">
         </div>
-        <div class="eco-subtitle">Brug af så meget standardfunktionalitet som muligt</div>
+
+        <div class="eco-step-connector reveal">&darr;</div>
+
+        <div class="eco-step reveal">
+          <div class="eco-step-label">Trin 4 &mdash; Azure-laget</div>
+          <div class="eco-step-desc">Logic Apps, Service Bus, API Management, Azure Functions, DevOps, Entra ID, Key Vault &mdash; og meget mere</div>
+          <img src="images/eco-slide-4.png" alt="Azure-laget" class="reveal">
+        </div>
+
+        <div class="eco-step-connector reveal">&darr;</div>
+
+        <div class="eco-step reveal">
+          <div class="eco-step-label">Trin 5 &mdash; End-to-end p&aring; tv&aelig;rs af &oslash;kosystemet</div>
+          <div class="eco-step-desc">Fra marketing-kampagne til faktura til Power BI &mdash; brug af s&aring; meget standardfunktionalitet som muligt</div>
+          <img src="images/eco-slide-5.png" alt="End-to-end" class="reveal">
+        </div>
       </div>
 
       <!-- Mobile fallback -->
@@ -1812,7 +1900,7 @@ body {
 
   <section class="growth-section" id="beat-growth">
     <div class="growth-inner">
-      <div class="beat-label reveal" style="text-align:center;">05 &mdash; V&aelig;ksthistorien</div>
+      <div class="beat-label reveal" style="text-align:center;">06 &mdash; V&aelig;ksthistorien</div>
       <h2 class="reveal reveal-delay-1">Modellen virker. Tallene viser det.</h2>
       <p class="lead reveal reveal-delay-2">
         Fra 3 konsulenter i 2009 til 153 eksperter i dag. Organisk v&aelig;kst, ingen opk&oslash;b, ingen kompromiser.
@@ -1849,7 +1937,17 @@ body {
 
       </div>
 
-      <!-- Gazelle showcase — full width below charts -->
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════════════════
+       SECTION 7: BØRSEN GAZELLE
+       ═══════════════════════════════════════════════════════════════════════════ -->
+
+  <section class="gazelle-section" id="section-gazelle">
+    <div class="gazelle-section-inner">
+      <div class="beat-label reveal" style="color:#b8975a;">07 &mdash; B&oslash;rsen Gazelle</div>
       <div class="gazelle-showcase reveal" id="gazelleShowcase">
         <div class="gazelle-showcase-inner">
           <div class="gazelle-logo-side">
@@ -1876,7 +1974,7 @@ body {
 
   <section class="logos-section" id="section-logos">
     <div class="logos-inner">
-      <div class="beat-label reveal" style="color:rgba(255,255,255,0.35);">06 &mdash; Vores kunder</div>
+      <div class="beat-label reveal" style="color:rgba(255,255,255,0.35);">08 &mdash; Vores kunder</div>
       <h2 class="reveal reveal-delay-1">Vi arbejder med mange mennesker &amp; virksomheder</h2>
       <p class="lead reveal reveal-delay-2">115 Dynamics 365 og 38 AX 2012 kunder</p>
       <div class="industry-filters reveal reveal-delay-3" id="industryFilters">
@@ -1903,7 +2001,7 @@ body {
 
   <section class="global-section" id="section-global">
     <div class="global-inner">
-      <div class="beat-label reveal" style="color:rgba(255,255,255,0.35);">07 &mdash; Global r&aelig;kkevidde</div>
+      <div class="beat-label reveal" style="color:rgba(255,255,255,0.35);">09 &mdash; Global r&aelig;kkevidde</div>
       <h2 class="reveal reveal-delay-1">Følg solen</h2>
       <p class="lead reveal reveal-delay-2">5 kontorer i Danmark, Norge og Dubai &mdash; vi servicerer kunder i 37 lande</p>
 
@@ -2119,7 +2217,7 @@ body {
 
   <section class="model-section" id="section-model">
     <div class="model-inner">
-      <div class="beat-label reveal" style="text-align:center;">08 &mdash; Modellen</div>
+      <div class="beat-label reveal" style="text-align:center;">10 &mdash; Modellen</div>
       <h2 class="reveal reveal-delay-1">Fra 10 til 100 i en flad organisation</h2>
       <p class="lead reveal reveal-delay-2">Ingen mellemledere, ingen salg, ingen marketing, ingen administration. Alt hviler på vores kerne &mdash; konsulenterne.</p>
 
@@ -2184,7 +2282,7 @@ body {
 
   <section class="validation-section" id="section-validation">
     <div class="validation-inner">
-      <div class="beat-label reveal" style="text-align:center;">09 &mdash; Ekstern validering</div>
+      <div class="beat-label reveal" style="text-align:center;">11 &mdash; Ekstern validering</div>
       <h2 class="reveal reveal-delay-1">Podcasts, Presse &amp; Ledelseslitteratur</h2>
       <p class="lead reveal reveal-delay-2">Pingala som case study i ledelseslitteratur og dansk erhvervspresse</p>
 
@@ -2216,7 +2314,7 @@ body {
 
   <section class="ona-section" id="section-ona">
     <div class="ona-inner">
-      <div class="beat-label reveal" style="color:rgba(255,255,255,0.35);">10 &mdash; ONA</div>
+      <div class="beat-label reveal" style="color:rgba(255,255,255,0.35);">12 &mdash; ONA</div>
       <h2 class="reveal reveal-delay-1">Organisatorisk Netværksanalyse</h2>
       <p class="lead reveal reveal-delay-2">Fra 14 til 130 medarbejdere &mdash; visualiseret gennem netværksforbindelser</p>
 
@@ -2259,7 +2357,7 @@ body {
 
   <section class="close-section" id="section-close">
     <div class="close-inner">
-      <div class="beat-label reveal" style="color:rgba(255,255,255,0.5);">11 &mdash; Hvorfor</div>
+      <div class="beat-label reveal" style="color:rgba(255,255,255,0.5);">13 &mdash; Hvorfor</div>
       <h2 class="close-mantra reveal reveal-delay-1">Vi er nu på vej ind i et nyt mantra:<br><em>100 til 1000</em></h2>
 
       <div class="close-points">
